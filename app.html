@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess the Number</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    .game-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    input[type="number"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1>🎯 Guess the Number</h1>
+    <p>I'm thinking of a number between 1 and 20.</p>
+    <input type="number" id="guess" placeholder="Enter your guess" min="1" max="20" />
+    <br>
+    <button onclick="checkGuess()">Submit</button>
+    <button onclick="resetGame()">Reset</button>
+    <p id="feedback"></p>
+    <a href="scratch.html">← Back to Scratch Page</a>
+  </div>
+
+  <script>
+    let secretNumber = Math.floor(Math.random() * 20) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const userGuess = parseInt(document.getElementById("guess").value);
+      const feedback = document.getElementById("feedback");
+      attempts++;
+
+      if (isNaN(userGuess) || userGuess < 1 || userGuess > 20) {
+        feedback.textContent = "⛔ Please enter a number between 1 and 20.";
+      } else if (userGuess === secretNumber) {
+        feedback.textContent = `🎉 Correct! It was ${secretNumber}. You guessed it in ${attempts} tries.`;
+        feedback.style.color = "green";
+      } else if (userGuess < secretNumber) {
+        feedback.textContent = "📉 Too low. Try again!";
+        feedback.style.color = "#333";
+      } else {
+        feedback.textContent = "📈 Too high. Try again!";
+        feedback.style.color = "#333";
+      }
+    }
+
+    function resetGame() {
+      secretNumber = Math.floor(Math.random() * 20) + 1;
+      attempts = 0;
+      document.getElementById("guess").value = "";
+      document.getElementById("feedback").textContent = "";
+    }
+  </script>
+</body>
+</html>
