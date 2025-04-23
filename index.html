@@ -4,15 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calli House | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</header>
-<section class="container py-5 text-center">
-  <h2>Behind the Lens</h2>
-  <p>This is one of my favorite shots — where creativity meets the outdoors.</p>
-  <img src="CalliCamera.jpeg" alt="Calli with a camera" class="img-fluid rounded shadow" style="max-width: 600px;">
-</section>
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -31,20 +24,17 @@
     }
     .hero p {
       font-size: 1.25rem;
-      <section class="container py-5 text-center">
-  <h2>Behind the Lens</h2>
-  <p>This is one of my favorite shots — where creativity meets the outdoors.</p>
-  <img src="CalliCamera.jpeg" alt="Calli with a camera" class="img-fluid rounded shadow" style="max-width: 600px;">
-</section>
     }
-    .card {
-      box-shadow: 0 0 15px rgba(0,0,0,0.05);
-      border: none;
-      transition: all 0.3s ease-in-out;
+    .image-section {
+      background-color: #fff;
+      padding: 60px 20px;
+      text-align: center;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    .image-section img {
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
     }
     footer {
       background-color: #212529;
@@ -54,11 +44,6 @@
       font-size: 0.95rem;
     }
   </style>
-  .hero p {
-    font-size: 1.25rem;
-  }
-</style>
-</section>
 </head>
 <body>
 
@@ -87,6 +72,15 @@
       <p class="lead mt-3">I'm Calli — a curious, creative, and passionate problem-solver. Explore my work and what I bring to the table.</p>
     </div>
   </header>
+
+  <!-- Image Section -->
+  <section class="image-section">
+    <div class="container">
+      <h2>Behind the Lens</h2>
+      <p>This is one of my favorite shots — where creativity meets the outdoors.</p>
+      <img src="CalliCamera.jpeg" alt="Calli with a camera" />
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
